@@ -36,19 +36,31 @@ class _ShowDataState extends State<ShowData> {
                   builder: (BuildContext context, AsyncSnapshot snapshot) {
                     if (snapshot.hasData) {
                       var doc = snapshot.data.docs;
+                      //List<Widget> list = [];
                       return ListView.builder(
                         addSemanticIndexes: true,
                         shrinkWrap: false,
                         itemCount: doc.length,
                         itemBuilder: (BuildContext context, int index) {
+                          var socialMedias = doc[index].get('socialMedias');
+                          if (socialMedias != "") {
+                            print(socialMedias[0]["snapchat"]);
+                          } //list.add(
                           return Center(
                             child: Text(
-                              doc[index].get('socialMedias'),
+                              "${doc[index].get('socialMedias')}",
                               style: TextStyle(color: Colors.blueAccent),
                             ),
                           );
+                          // );
                         },
                       );
+                      // return Expanded(
+                      //   child: ListView(
+                      //     reverse: true,
+                      //     children: list,
+                      //   ),
+                      // );
                     }
                     return CircularProgressIndicator();
                   },
