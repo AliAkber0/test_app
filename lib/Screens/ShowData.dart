@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_app/Controller/AuthController.dart';
 
 class ShowData extends StatefulWidget {
   @override
@@ -17,6 +19,13 @@ class _ShowDataState extends State<ShowData> {
           // crossAxisAlignment: CrossAxisAlignment.str,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            MaterialButton(
+              child: Text("Sign Out"),
+              color: Colors.white70,
+              onPressed: () {
+                Get.find<AuthController>().signOut();
+              },
+            ),
             Center(child: Text('Hello Welcome !!!')),
             Expanded(
               flex: 1,
@@ -52,10 +61,6 @@ class _ShowDataState extends State<ShowData> {
     );
   }
 }
-
-
-
-
 
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:flutter/material.dart';

@@ -226,6 +226,7 @@ class _SocialMediaState extends State<SocialMedia> {
                   addSocialMedias();
                 },
                 child: Container(
+                  color: Colors.yellowAccent,
                   padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
                   child: Text(
                     'Save',
